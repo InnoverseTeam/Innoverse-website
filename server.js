@@ -12,7 +12,8 @@ const secretKey = '';
 app.use(session({
     secret: secretKey,
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: { secure: false }
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -31,7 +32,7 @@ const conn = mysql.createConnection(dbConfig);
 
 conn.connect(err => {
     if (err) throw err;
-    console.log('Database connected!');
+    console.log('\x1b[32m%s\x1b[0m', 'Database connected!');
 });
 
 app.get('/users/:innoverseid', (req, res) => {
@@ -61,14 +62,16 @@ app.get('/register', (req, res) => {
 });
 
 app.post('/register', (req, res) => {
-    if (req.body.innoverseid && req.body.username && req.body.password) {
-        const { innoverseid, username, password, nnid } = req.body;
+    const { innoverseid, username, password } = req.body;
+    
+    if (innoverseid && username && password) {
         const ip_address = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
-        const sql = "INSERT INTO users (innoverseid, username, password, nnid, ip_address) VALUES (?, ?, ?, ?, ?)";
-        conn.query(sql, [innoverseid, username, password, nnid || null, ip_address], (err, result) => {
+        const sql = "INSERT INTO users (innoverseid, username, password, ip_address) VALUES (?, ?, ?, ?)";
+        conn.query(sql, [innoverseid, username, password || null, ip_address], (err, result) => {
             if (err) {
-                res.redirect('/setup');
+                console.error('Erreur lors de l\'insertion dans la base de données:', err);
+                res.status(500).send('Erreur lors de l\'inscription. Veuillez réessayer plus tard.');
             } else {
                 req.session.username = username;
                 req.session.innoverseid = innoverseid;
@@ -76,7 +79,7 @@ app.post('/register', (req, res) => {
             }
         });
     } else {
-        res.send("Erreur: Tous les champs requis doivent être remplis.");
+        res.status(400).send('Erreur: Tous les champs requis doivent être remplis.');
     }
 });
 
@@ -134,5 +137,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(port, () => {
-    console.log(`The server started on port ${port}`);
+    console.log('\x1b[34m%s\x1b[0m', `The server started on port ${port}`);
 });

@@ -1,0 +1,37 @@
+<%- include('partials/head.ejs'); %>
+
+<body class="guest-top guest" data-token="">
+<div id="sub-body">
+    <menu id="">
+        <li id="global-menu-logo"><h1><img src="../img/innoverse_logo.png" alt="Innoverse" width="200" height="55"></h1></li>
+        <li id="global-menu-login">
+        </li>
+    </menu>
+</div>
+
+<div id="wrapper"> 
+<div id="main-body">
+<div class="headline">
+    <h2 class="headline-text">Login</h2>
+</div>
+
+<form method="post" action="/login">
+    <a href="/">
+        <img src="../img/innoverse_logo.png" width="165" alt="Innoverse">
+    </a>
+    <p style="font-size: 16px;">Log in to your Innoverse Account to see all communities in the world!</p>
+    <span class="error-text none" data-no-account="No account could be found with the given Innoverse ID." data-password-mismatch="The given password is incorrect." data-default="Unknown error."></span>
+    <input type="text" required="true" id="innoverseid" name="innoverseid" placeholder="Enter your Innoverse ID.." autocomplete="off">
+    <input type="password" required="true" id="password" name="password" placeholder="Enter your password.." autocomplete="off">
+
+    <input style="background-color: white; border-radius: 8px;" type="submit" value="Sign in">
+
+    <br>
+    <span class="question">Don't have an Innoverse account? You can sign up <a href="/register">here</a>!</span>
+</form>
+</div>
+</div>
+
+
+
+</body>

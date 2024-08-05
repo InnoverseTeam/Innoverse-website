@@ -1,9 +1,11 @@
-<%- include('partials/head.ejs'); %>
+<%- include('partials/head.ejs', {
+title : ""
+}); -%>
 
 <body class="guest-top guest" data-token="">
 <div id="wrapper">
 <% if (session.innoverseid) { %>
-    <% const url_id = "users/" + encodeURIComponent(session.innoverseid); %>
+    <% const url_id = "/users/" + encodeURIComponent(session.innoverseid); %>
 <div id="sub-body">
     <menu id="global-menu">
         <li id="global-menu-logo">
@@ -12,7 +14,7 @@
         <li id="global-menu-mymenu">
             <a href="<%= url_id %>">
                 <span class="icon-container">
-                    <img src="../img/mii/img_unknown_MiiIcon.png" alt="user page">
+                    <img src="../img/default_mii/normal_face.png" alt="user page">
                 </span>
                 <span><%= session.innoverseid %></span>
             </a>

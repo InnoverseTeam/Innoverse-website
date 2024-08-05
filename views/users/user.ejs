@@ -1,10 +1,11 @@
-<%- include('../partials/head.ejs'); %>
-<title><%= user.innoverseid %>'s Profile</title>
+<%- include('../partials/head.ejs', {
+    title : `Innoverse - ${user.innoverseid}'s Profile`
+}) -%>
 
 <body class="guest-top guest" data-token="">    
     <div id="wrapper">
     <% if (user.innoverseid) { %>
-        <% const url_id = "users/" + encodeURIComponent(user.innoverseid); %>
+        <% const url_id = "/users/" + encodeURIComponent(user.innoverseid); %>
         <div id="sub-body">
             <menu id="global-menu">
                 <li id="global-menu-logo">
@@ -13,7 +14,7 @@
                 <li id="global-menu-mymenu" class="<%= (user.innoverseid === userInSession) ? 'selected' : '' %>">
                     <a href="<%= url_id %>">
                         <span class="icon-container">
-                            <img src="../img/mii/img_unknown_MiiIcon.png" alt="user page">
+                            <img src="../img/default_mii/normal_face.png" alt="user page">
                         </span>
                         <span><%= userInSession %></span>
                     </a>
@@ -39,7 +40,7 @@
     <% } else { %>
         <div id="sub-body">
             <menu>
-                <li id="global-menu-logo"><h1><img src="/static/img/innoverse_logo.png" alt="Innoverse" width="200" height="55"></h1></li>
+                <li id="global-menu-logo"><h1><img src="../img/innoverse_logo.png" alt="Innoverse" width="200" height="55"></h1></li>
                 <li id="global-menu-login">
                     <form id="login_form" action="/login" method="get">
                         <input type="submit" class="black-button" value="Sign in">
@@ -55,10 +56,15 @@
                 <h2 class="headline-text"><%= user.innoverseid %></h2>
                 <div id="user-content" class="no-profile-post-user">
                     <span class="icon-container">
-                        <img class="icon" src="">
+                        <img class="icon" src="../img/default_mii/normal_face.png">
                     </span>
                     <div style="position: relative; left: 5px; font-size: 20px;"><%= user.innoverseid %></div>
                     <span style="left: 5px; color: gray; font-size: 15px; vertical-align: baseline; display: inline-block; position: relative; top: -18px;"><%= user.username %></span>
+                    <% if (userInSession === user.innoverseid) { %>
+                        <div id="edit-profile-settings">
+                            <button style="position: relative; bottom: 6px;" class="button symbol">Profile Settings</button>
+                        </div>
+                    <% } %>
                 </div>
             </div>
         </div>

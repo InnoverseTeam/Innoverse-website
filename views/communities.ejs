@@ -1,0 +1,126 @@
+<%- include("partials/head.ejs", { image_url : "/img/logo.png" , title : "" , description : "Innoverse - Recreation of Miiverse for Wii U & 3DS." }) %>
+
+<body class="guest-top guest">
+
+<%- include('partials/navbar.ejs', { page : "communities" }) %>
+
+<div id="main-body">
+    <div id="about">
+        <div id="about-inner">
+            <div id="about-text">
+                <h2 class="welcome-message">Welcome to Innoverse!</h2>
+                <p>Innoverse is a service that lets you communicate with other players from around the world. It is accessible via Wii U and systems in the Nintendo 3DS family.</p>
+                <div class="guest-terms-content">
+                    <% if (session.inid) { %>
+                        <!-- nothing -->
+                    <% } else { %>
+                        <a class="symbol guest-terms-link test-guest-terms" href="/account/login">Login</a>
+                    <% } %>
+                </div>
+                <div class="guest-terms-content">
+                    <a class="symbol guest-terms-link test-guest-terms" href="/terms">Use of Innoverse</a>
+                </div>
+            </div>
+            <img src="http://web.archive.org/web/20160209132655im_/https://d13ph7xrk1ee39.cloudfront.net/img/welcome-image.png?GSZx3dDfarzH5Qi3V4b2MQ">
+        </div>
+    </div>
+    <div class="body-content" id="community-top">
+        <div class="community-main">
+            <div id="community-eyecatch">
+                <div id="community-eyecatch-main">
+                    <div class="eyecatch-diary-post js-eyecatch-diary-post test-eyecatch-diary-post" data-index="10">
+                        <a href="/web/20160209132655/https://miiverse.nintendo.net/posts/AYMHAAACAAADVHk47lVNbg" class="community-eyecatch-image test-community-eyecatch-image" style="background-image: url('/img/banner/home.png')">
+                            <span class="icon-container">
+                                <img src="https://mii-secure.cdn.nintendo.net/14eufz392gkjb_happy_face.png" alt="profile" class="icon community-eyecatch-usericon test-community-eyecatch-usericon">
+                            </span>
+                            <p class="community-eyecatch-balloon test-community-eyecatch-balloon">
+                                <span>Have any BURNING questions you wanna ask about me? Ask me anything! Make sure to put them in the comments below! I'll put them all together in a vid and your question may be featured!</span>
+                            </p>
+                        </a>
+                        <a href="/web/20160209132655/https://miiverse.nintendo.net/titles/14866558073037299863/14866558073037299866" class="community-eyecatch-info test-community-eyecatch-info-link">
+                            <img src="http://web.archive.org/web/20160209132655im_/https://d3esbfg30x759i.cloudfront.net/oip/zlCfzRAaoJc60Pc-Q-" width="40" height="40" class="community-eyecatch-infoicon test-community-eyecatch-infoicon">
+                            <h4 class="community-game-title test-community-game-title" data-index="10">Super Smash Bros. for 3DS/Wii U</h4>
+                            <p class="community-game-device">
+                                <span class="platform-tag"><img src="http://web.archive.org/web/20160209132655im_/https://d13ph7xrk1ee39.cloudfront.net/img/platform-tag-wiiu-3ds.png?RDl5yYHPpQLdPJ9mgRraHQ"></span>
+                                <span class="text test-community-device-text">Wii U Games・3DS Games</span>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="community-top-sidebar">
+            <form method="GET" action="/titles/search" class="search">
+                <input type="text" name="query" placeholder="Search Communities" minlength="2" maxlength="20">
+                <input type="submit" value="q" title="Search">
+            </form>
+
+            <div id="identified-user-banner">
+                <a href="/identified_user_posts" data-pjax="#body" class="list-button us">
+                    <span class="title">Get the latest news here!</span>
+                    <span class="text">Posts from Verified Users</span>
+                </a>
+            </div>
+            <div class="digest-container">
+                <h3 class="community-title symbol hot-artwork-title">Featured Drawings</h3>
+                <div class="digest artwork-digest test-artwork-digest">
+
+                    <!-- featured drawings -->
+
+                </div>
+                <h3 class="community-title symbol hot-topic-title">Featured Discussions</h3>
+                <div class="digest test-topic-digest">
+
+                    <!-- featured discussions -->
+
+                </div>
+            </div>
+        </div>
+
+        <div class="community-main">
+
+            <h3 class="community-title symbol">Popular Communities</h3>
+            <div>
+                <ul class="list community-list community-card-list test-hot-communities">
+                    <li id="community-14866558073037299866" class="trigger test-community-list-item" data-href="/titles/14866558073037299863/14866558073037299866" tabindex="0">
+                        <img src="http://web.archive.org/web/20160209132655im_/https://d3esbfg30x759i.cloudfront.net/cnj/zlCfzRAaoJoJ-us1fI" class="community-list-cover">
+                        <div class="community-list-body">
+                            <span class="icon-container"><img src="http://web.archive.org/web/20160209132655im_/https://d3esbfg30x759i.cloudfront.net/cip/zlCfzRAaoJoJ-us1fI" class="icon"></span>
+                            <div class="body">
+                                <a class="title" href="/web/20160209132655/https://miiverse.nintendo.net/titles/14866558073037299863/14866558073037299866" tabindex="-1">Super Smash Bros. for 3DS/Wii U</a>
+                                <span class="platform-tag"><img src="http://web.archive.org/web/20160209132655im_/https://d13ph7xrk1ee39.cloudfront.net/img/platform-tag-wiiu-3ds.png?RDl5yYHPpQLdPJ9mgRraHQ"></span>
+                                <span class="text">Wii U Games・3DS Games</span>
+                            </div>
+                            <a href="/web/20160209132655/https://miiverse.nintendo.net/titles/14866558073037299863" class="siblings symbol"><span class="symbol-label">Related Communities</span></a>
+                        </div>
+                    </li>
+
+                    <li id="community-6437256808807296663" class="trigger test-community-list-item" data-href="/titles/6437256808807296652/6437256808807296663" tabindex="0">
+                        <img src="http://web.archive.org/web/20160209132655im_/https://d3esbfg30x759i.cloudfront.net/cnj/WVW69ijsbpcPefFCV6" class="community-list-cover">
+                        <div class="community-list-body">
+                            <span class="icon-container"><img src="http://web.archive.org/web/20160209132655im_/https://d3esbfg30x759i.cloudfront.net/tip/AAQAAAAVNQAaMOAw4t" class="icon"></span>
+                            <div class="body">
+                                <a class="title" href="/web/20160209132655/https://miiverse.nintendo.net/titles/6437256808807296652/6437256808807296663" tabindex="-1">Nintendo Badge Arcade</a>
+                                <span class="platform-tag"><img src="http://web.archive.org/web/20160209132655im_/https://d13ph7xrk1ee39.cloudfront.net/img/platform-tag-3ds.png?BE42oN3iuXY-1RItS5goxA"></span>
+                                <span class="text">3DS Games</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li id="community-6437256808834406327" class="trigger test-community-list-item" data-href="/titles/6437256808834406317/6437256808834406327" tabindex="0">
+                        <img src="http://web.archive.org/web/20160209132655im_/https://d3esbfg30x759i.cloudfront.net/cnj/WVW69iqKF7ckTe5yLV" class="community-list-cover">
+                        <div class="community-list-body">
+                            <span class="icon-container"><img src="http://web.archive.org/web/20160209132655im_/https://d3esbfg30x759i.cloudfront.net/tip/AAUAABAdvgApDXIpUJ" class="icon"></span>
+                            <div class="body">
+                                <a class="title" href="/web/20160209132655/https://miiverse.nintendo.net/titles/6437256808834406317/6437256808834406327" tabindex="-1">My Nintendo</a>
+                                <span class="platform-tag"><img src="http://web.archive.org/web/20160209132655im_/https://d13ph7xrk1ee39.cloudfront.net/img/platform-tag-3ds.png?BE42oN3iuXY-1RItS5goxA"></span>
+                                <span class="text">3DS Games</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <%- include('partials/footer.ejs') %>
+        </div>
+    </div>
+</div>

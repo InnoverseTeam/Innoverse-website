@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<% if (image_url) { %>
+	    <meta name="og:image" content="<%= image_url %>">
+	<% } %>
+
+	<% if (title) { %>
+	    <meta name="title" content="<%= title %>">
+	    <meta name="og:title" content="<%= title %>">
+	    <title><%= title %></title>
+	<% } else { %>
+	    <meta name="title" content="Innoverse - Recreation of Miiverse">
+	    <meta name="og:title" content="Innoverse - Recreation of Miiverse">
+	    <title>Innoverse - Recreation of Miiverse</title>
+	<% } %>
+
+	<% if (description) { %>
+	    <meta name="description" content="<%= description %>">
+	    <meta name="og:description" content="<%= description %>">
+	<% } else { %>
+	    <meta name="description" content="Innoverse Recreation of Miiverse.">
+	    <meta name="og:description" content="Innoverse Recreation of Miiverse.">
+	<%} %>
+
+	<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="/css/offdevice.css">
+	<script src="/js/innoverse.js"></script>
+</head>

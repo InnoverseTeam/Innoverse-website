@@ -1,0 +1,45 @@
+<%- include("../partials/head.ejs", { image_url : "/img/logo.png" , title : "" , description : "" }) -%>
+
+<body class="guest ">
+    <div id="wrapper">
+        <div id="sub-body">
+            <menu id="global-menu">
+                <li id="global-menu-logo">
+                    <h1><a href="/"><img src="/img/innoverse_logo.png" alt="Juice" width="165" height="30"></a></h1>
+                </li>
+                <li id="global-menu-login">
+                    <form id="login_form" action="/account/login" method="post">
+                        <input type="image" alt="Sign in" src="/img/signin.png">
+                    </form>
+                </li>
+            </menu>
+        </div>
+<div id="main-body"><div class="post-list-outline no-content center">
+<form method="post">
+    <input type="hidden" name="token" value="lPGfmDLr921Ede5fuXL4xg"><br>
+    <img height="110px" src="/img/innoverse_logo.png">
+    <p>Log in with a Innoverse account for use Innoverse.</p>
+    <br>
+        <input type="text" id="inid" name="inid" placeholder="InnoverseID" required="" maxlength="32">
+    <br>
+        <input type="password" name="password" placeholder="Password" required="" maxlength="72">
+    <br>
+    <div class="form-buttons">
+        <button class="black-button" type="submit">Log in</button>
+    </div>
+    <br>
+    <a href="/account/signup">Signup Here</a>
+</form>
+</div>            
+</div>
+    <div id="footer">
+        <div id="footer-inner">
+            <div class="link-container">
+                <p><a href="https://github.com/InnoverseTeam">Github</a></p>
+                <p><a href="/rules">Site Rules</a></p>
+                <p><a href="https://dsc.gg/innoverseclub">Discord</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
